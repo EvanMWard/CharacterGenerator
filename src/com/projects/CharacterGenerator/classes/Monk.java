@@ -3,6 +3,7 @@ package com.projects.CharacterGenerator.classes;
 public class Monk implements DNDClass {
 
     String[] statOrder = {"Dexterity", "Wisdom", "Constitution", "Strength", "Intelligence", "Charisma"};
+    int level = 1;
 
     public Monk(){
 
@@ -16,5 +17,10 @@ public class Monk implements DNDClass {
     @Override
     public String toString(){
         return "Monk";
+    }
+
+    @Override
+    public int getLevel() {
+        return level;
     }
 }

@@ -1,11 +1,8 @@
 package com.projects.CharacterGenerator.classes;
 
-import com.projects.CharacterGenerator.DNDValue;
-import com.projects.CharacterGenerator.classes.Barbarian;
+public interface DNDClass{
 
-public interface DNDClass extends DNDValue {
-
-    public static DNDClass byOrdinal(int ord){
+    static DNDClass byOrdinal(int ord){
         if(ord == 1) return new Barbarian();
         if(ord == 2) return new Bard();
         if(ord == 3) return new Cleric();
@@ -22,7 +19,8 @@ public interface DNDClass extends DNDValue {
     }
 
 
-    public String[] getStatOrder();
-    public String toString();
+    String[] getStatOrder();
+    String toString();
+    int getLevel();
 
 }

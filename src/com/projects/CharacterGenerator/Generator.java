@@ -2,37 +2,59 @@ package com.projects.CharacterGenerator;
 
 import com.projects.CharacterGenerator.classes.DNDClass;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 class Generator {
-    private DNDClass characterClass;
-    private DNDRace characterRace;
-    private Character character = new Character();
+    private Character character;
+    String balance = "Balance";
 
     Generator(DNDRace characterRace, DNDClass characterClass){
-        this.characterRace = characterRace;
-        this.characterClass = characterClass;
+        character = new Character(characterRace, characterClass);
     }
 
     Character generateCharacter(){
-        character.characterRace = this.characterRace;
-        character.characterClass = this.characterClass;
         character.stats = rollStats();
-        character.inventory = generateInventory();
-        character.spellList = generateSpellList();
+        character.modifiers = computeModifiers(character.stats);
+        getBalance();
+        character.inventory = generateInventory(balance);
+        character.spellList = generateSpellList(balance);
+        character.proficiencies = computeProficiencies();
         character.skills = generateSkills();
         character.features = generateFeatures();
         character.hitPoints = computeHitPoints();
-        character.hitDiceType = computeHitDiceType();
         character.armorClass = computeArmorClass();
-        character.speed = computeSpeed();
-        character.initiative = computeInitiative();
+        character.initiative = computeInitiative(character.modifiers);
         character.savingThrows = computeSavingThrows();
-        character.proficiencies = computeProficiencies();
-        character.spellSlots = computeSpellSlots();
-        character.resistances = computeResistances();
         return character;
+    }
+
+    private void getBalance() {
+        Scanner scan = new Scanner(System.in);
+        int balanceInt;
+        boolean validInput = false;
+        while(!validInput){
+            System.out.println("Please select a primary role for your character. (1-3)");
+            System.out.println("1. RP");
+            System.out.println("2. Combat");
+            System.out.println("3. Balanced");
+            balanceInt = scan.nextInt();
+            switch(balanceInt){
+                case 1:
+                    balance = "RP";
+                    validInput = true;
+                    break;
+                case 2:
+                    balance = "Combat";
+                    validInput = true;
+                    break;
+                case 3:
+                    balance = "Balance";
+                    validInput = true;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     private HashMap<String, Integer> rollStats(){
@@ -67,7 +89,7 @@ class Generator {
         Collections.reverse(statHolder);
 
         //Assign stats based on class
-        String[] statOrder = characterClass.getStatOrder();
+        String[] statOrder = character.getCharacterClass().getStatOrder();
         for(int i = 0; i < 6; i++){
             Iterator iter = stats.keySet().iterator();
             while(iter.hasNext()){
@@ -78,11 +100,27 @@ class Generator {
         return stats;
     }
 
-    private ArrayList<String> generateInventory(){
+    private HashMap<String, Integer> computeModifiers(HashMap<String, Integer> stats){
+        HashMap<String, Integer> modifiers = new HashMap<>();
+        Iterator iter = stats.keySet().iterator();
+        while(iter.hasNext()){
+            String key = (String)iter.next();
+            if(stats.get(key) < 10) modifiers.put(key, (stats.get(key)-10)/2 - 1);
+            else modifiers.put(key, (stats.get(key)-10)/2);
+        }
+        System.out.println(modifiers);
+        return modifiers;
+    }
+
+    private ArrayList<String> generateInventory(String balance){
         return null;
     }
 
-    private ArrayList<String> generateSpellList(){
+    private ArrayList<String> generateSpellList(String balance){
+        return null;
+    }
+
+    private ArrayList<String> computeProficiencies(){
         return null;
     }
 
@@ -95,10 +133,8 @@ class Generator {
     }
 
     private int computeHitPoints(){
-        return 0;
-    }
-
-    private int computeHitDiceType(){
+        //return characterClass.baseHitPoints + character.level*(characterClass.baseHitPoints/2+1)
+                //+ character.modifiers.get("Constitution")*character.level;
         return 0;
     }
 
@@ -106,28 +142,11 @@ class Generator {
         return 0;
     }
 
-    private int computeSpeed(){
-        return 0;
-    }
-
-    private int computeInitiative(){
-        return 0;
+    private int computeInitiative(HashMap<String, Integer> modifiers){
+        return modifiers.get("Dexterity");
     }
 
     private HashMap<String, Integer> computeSavingThrows(){
         return null;
     }
-
-    private ArrayList<String> computeProficiencies(){
-        return null;
-    }
-
-    private HashMap<String, Integer> computeSpellSlots(){
-        return null;
-    }
-
-    private ArrayList<String> computeResistances(){
-        return null;
-    }
-
 }

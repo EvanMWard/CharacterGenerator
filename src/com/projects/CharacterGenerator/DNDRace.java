@@ -1,6 +1,6 @@
 package com.projects.CharacterGenerator;
 
-public enum DNDRace implements DNDValue{
+public enum DNDRace{
     Dragonborn(1), Dwarf(2), Elf(3),
     Gnome(4), HalfElf(5), Halfling(6),
     HalfOrc(7), Human(8), Tiefling(9);

@@ -3,6 +3,7 @@ package com.projects.CharacterGenerator.classes;
 public class Wizard implements DNDClass {
 
     String[] statOrder = {"Intelligence", "Constitution", "Dexterity", "Wisdom", "Charisma", "Strength"};
+    int level = 1;
 
     public Wizard(){
 
@@ -16,5 +17,10 @@ public class Wizard implements DNDClass {
     @Override
     public String toString(){
         return "Wizard";
+    }
+
+    @Override
+    public int getLevel() {
+        return level;
     }
 }

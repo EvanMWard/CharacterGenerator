@@ -17,7 +17,7 @@ public class Main {
         character = generator.generateCharacter();
     }
 
-    private static DNDValue getUserInput(String input){
+    private static Object getUserInput(String input){
         int ordinal;
         while(true) {
             if(input.equals("race")) {
