@@ -1,5 +1,7 @@
 package com.projects.CharacterGenerator.classes;
 
+import java.util.HashMap;
+
 public interface DNDClass{
 
     static DNDClass byOrdinal(int ord){
@@ -20,7 +22,18 @@ public interface DNDClass{
 
 
     String[] getStatOrder();
+
     String toString();
+
     int getLevel();
 
+    int getBaseHitPoints();
+
+    boolean hasShield();
+
+    String getArmorType();
+
+    HashMap<String, String> getFeatures();
+
+    String getUnarmoredDefense();
 }

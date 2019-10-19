@@ -1,5 +1,7 @@
 package com.projects.CharacterGenerator.classes;
 
+import java.util.HashMap;
+
 public class Monk implements DNDClass {
 
     String[] statOrder = {"Dexterity", "Wisdom", "Constitution", "Strength", "Intelligence", "Charisma"};
@@ -22,5 +24,30 @@ public class Monk implements DNDClass {
     @Override
     public int getLevel() {
         return level;
+    }
+
+    @Override
+    public int getBaseHitPoints() {
+        return 0;
+    }
+
+    @Override
+    public boolean hasShield() {
+        return false;
+    }
+
+    @Override
+    public String getArmorType() {
+        return null;
+    }
+
+    @Override
+    public HashMap<String, String> getFeatures() {
+        return null;
+    }
+
+    @Override
+    public String getUnarmoredDefense() {
+        return null;
     }
 }

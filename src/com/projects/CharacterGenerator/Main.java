@@ -15,6 +15,7 @@ public class Main {
         System.out.println("You have selected " + characterRace + " " + characterClass);
         Generator generator = new Generator(characterRace, characterClass);
         character = generator.generateCharacter();
+        System.out.println(character);
     }
 
     private static Object getUserInput(String input){

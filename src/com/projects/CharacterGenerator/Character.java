@@ -20,8 +20,6 @@ public class Character {
     int initiative;
     HashMap<String, Integer> savingThrows;
     ArrayList<String> proficiencies;
-    HashMap<String, Integer> spellSlots;
-    ArrayList<String> resistances;
 
     public Character(DNDRace characterRace, DNDClass characterClass){
         this.characterRace = characterRace;
@@ -35,5 +33,40 @@ public class Character {
 
     protected DNDRace getCharacterRace(){
         return characterRace;
+    }
+
+    protected HashMap<String, Integer> getModifiers(){
+        return modifiers;
+    }
+
+    protected HashMap<String, Integer> getStats(){
+        return stats;
+    }
+
+    public ArrayList<String> getProficiencies() {
+        return proficiencies;
+    }
+
+    protected int getProficiencyBonus(){
+        return proficiencyBonus;
+    }
+
+    public String toString(){
+        return
+                "Your Character:\n" +
+                "Race: " + characterRace + "\n" +
+                "Class: " + characterClass + "\n" +
+                "Stats: " + stats + "\n" +
+                "Modifiers: " + modifiers + "\n" +
+                "Features: " + features + "\n" +
+                "Spell List: " + spellList + "\n" +
+                "Inventory: " + inventory + "\n" +
+                "Skills: " + skills + "\n" +
+                "Proficiencies: " + proficiencies + "\n" +
+                "Hit Points: " + hitPoints + "\n" +
+                "Proficiency Bonus: " + proficiencyBonus + "\n" +
+                "Armor Class: " + armorClass + "\n" +
+                "Initiative: " + initiative + "\n" +
+                "Saving Throws: " + savingThrows + "\n";
     }
 }

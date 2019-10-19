@@ -1,5 +1,7 @@
 package com.projects.CharacterGenerator;
 
+import java.util.HashMap;
+
 public enum DNDRace{
     Dragonborn(1), Dwarf(2), Elf(3),
     Gnome(4), HalfElf(5), Halfling(6),
@@ -20,4 +22,5 @@ public enum DNDRace{
         }
         return null;
     }
+
 }

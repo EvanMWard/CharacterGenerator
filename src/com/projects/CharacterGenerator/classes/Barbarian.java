@@ -1,10 +1,12 @@
 package com.projects.CharacterGenerator.classes;
 
-public class Barbarian implements DNDClass {
-    String[] statOrder = {"Strength", "Constitution", "Dexterity", "Charisma", "Wisdom", "Intelligence"};
-    int level = 1;
+import java.util.HashMap;
 
-    public Barbarian(){
+public class Barbarian implements DNDClass {
+    private String[] statOrder = {"Strength", "Constitution", "Dexterity", "Charisma", "Wisdom", "Intelligence"};
+    private int level = 1;
+
+    Barbarian(){
 
     }
 
@@ -21,5 +23,30 @@ public class Barbarian implements DNDClass {
     @Override
     public int getLevel() {
         return level;
+    }
+
+    @Override
+    public int getBaseHitPoints() {
+        return 12;
+    }
+
+    @Override
+    public boolean hasShield() {
+        return false;
+    }
+
+    @Override
+    public String getArmorType() {
+        return "None";
+    }
+
+    @Override
+    public HashMap<String, String> getFeatures() {
+        return new HashMap<>();
+    }
+
+    @Override
+    public String getUnarmoredDefense() {
+        return "Constitution";
     }
 }
