@@ -5,12 +5,14 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        Character character;
         DNDRace characterRace;
         DNDClass characterClass;
         characterRace = (DNDRace) getUserInput("race");
         characterClass = (DNDClass) getUserInput("class");
         System.out.println("You have selected " + characterRace + " " + characterClass);
         Generator generator = new Generator(characterRace, characterClass);
+        character = generator.generateCharacter();
     }
 
     private static DNDValue getUserInput(String input){
