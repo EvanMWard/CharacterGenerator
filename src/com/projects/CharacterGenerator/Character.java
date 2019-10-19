@@ -1,5 +1,7 @@
 package com.projects.CharacterGenerator;
 
+import com.projects.CharacterGenerator.classes.DNDClass;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,6 +24,7 @@ public class Character {
     HashMap<String, Integer> savingThrows;
     ArrayList<String> proficiencies;
     HashMap<String, Integer> spellSlots;
+    ArrayList<String> resistances;
 
     public Character(){
     }

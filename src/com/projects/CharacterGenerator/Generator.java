@@ -1,9 +1,9 @@
 package com.projects.CharacterGenerator;
 
+import com.projects.CharacterGenerator.classes.DNDClass;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.lang.reflect.Array;
+import java.util.*;
 
 class Generator {
     private DNDClass characterClass;
@@ -31,13 +31,51 @@ class Generator {
         character.savingThrows = computeSavingThrows();
         character.proficiencies = computeProficiencies();
         character.spellSlots = computeSpellSlots();
+        character.resistances = computeResistances();
         return character;
     }
 
     private HashMap<String, Integer> rollStats(){
+        Random rand = new Random();
         HashMap<String, Integer> stats = new HashMap<>();
-        int[] statHolder = new int[6];
-        return null;
+        stats.put("Strength", 0);
+        stats.put("Dexterity", 0);
+        stats.put("Constitution", 0);
+        stats.put("Intelligence", 0);
+        stats.put("Wisdom", 0);
+        stats.put("Charisma", 0);
+        ArrayList<Integer> statHolder = new ArrayList<>();
+        ArrayList<Integer> temp = new ArrayList<>();
+
+        //Simulate 4d6 drop lowest
+        for(int i = 0; i < 6; i++){
+            temp.clear();
+            //4d6
+            for(int j = 0; j < 4; j++){
+                temp.add(rand.nextInt(6)+1);
+            }
+            Collections.sort(temp);
+            int sum = 0;
+            //drop lowest
+            for(int j = 1; j < 4; j++){
+                sum += temp.remove(1);
+            }
+            statHolder.add(sum);
+        }
+
+        Collections.sort(statHolder);
+        Collections.reverse(statHolder);
+
+        //Assign stats based on class
+        String[] statOrder = characterClass.getStatOrder();
+        for(int i = 0; i < 6; i++){
+            Iterator iter = stats.keySet().iterator();
+            while(iter.hasNext()){
+                if(iter.next().equals(statOrder[i])) stats.replace(statOrder[i], statHolder.remove(0));
+            }
+        }
+        System.out.println(stats);
+        return stats;
     }
 
     private ArrayList<String> generateInventory(){
@@ -85,6 +123,10 @@ class Generator {
     }
 
     private HashMap<String, Integer> computeSpellSlots(){
+        return null;
+    }
+
+    private ArrayList<String> computeResistances(){
         return null;
     }
 

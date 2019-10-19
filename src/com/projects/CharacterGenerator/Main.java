@@ -1,5 +1,7 @@
 package com.projects.CharacterGenerator;
 
+import com.projects.CharacterGenerator.classes.DNDClass;
+
 import java.util.Scanner;
 
 public class Main {

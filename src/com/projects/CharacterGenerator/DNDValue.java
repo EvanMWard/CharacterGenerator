@@ -1,4 +1,5 @@
 package com.projects.CharacterGenerator;
 
-interface DNDValue {
+public interface DNDValue {
+    int test = 0;
 }
