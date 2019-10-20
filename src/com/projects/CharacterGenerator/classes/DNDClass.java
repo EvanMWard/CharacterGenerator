@@ -1,6 +1,6 @@
 package com.projects.CharacterGenerator.classes;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public interface DNDClass{
 
@@ -33,7 +33,13 @@ public interface DNDClass{
 
     String getArmorType();
 
-    HashMap<String, String> getFeatures();
+    ArrayList<String> getFeatures();
 
     String getUnarmoredDefense();
+
+    ArrayList<String> getBalancedInventory();
+
+    ArrayList<String> getCombatInventory();
+
+    ArrayList<String> getRPInventory();
 }

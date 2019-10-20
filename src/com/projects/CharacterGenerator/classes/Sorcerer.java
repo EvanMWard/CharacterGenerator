@@ -1,6 +1,6 @@
 package com.projects.CharacterGenerator.classes;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Sorcerer implements DNDClass {
 
@@ -42,12 +42,27 @@ public class Sorcerer implements DNDClass {
     }
 
     @Override
-    public HashMap<String, String> getFeatures() {
+    public ArrayList<String> getFeatures() {
         return null;
     }
 
     @Override
     public String getUnarmoredDefense() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getBalancedInventory() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getCombatInventory() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getRPInventory() {
         return null;
     }
 }

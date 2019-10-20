@@ -1,5 +1,6 @@
 package com.projects.CharacterGenerator.classes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Bard implements DNDClass{
@@ -27,7 +28,7 @@ public class Bard implements DNDClass{
 
     @Override
     public int getBaseHitPoints() {
-        return 0;
+        return 8;
     }
 
     @Override
@@ -41,12 +42,27 @@ public class Bard implements DNDClass{
     }
 
     @Override
-    public HashMap<String, String> getFeatures() {
-        return new HashMap<>();
+    public ArrayList<String> getFeatures() {
+        return new ArrayList<>();
     }
 
     @Override
     public String getUnarmoredDefense() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getBalancedInventory() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getCombatInventory() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getRPInventory() {
         return null;
     }
 }

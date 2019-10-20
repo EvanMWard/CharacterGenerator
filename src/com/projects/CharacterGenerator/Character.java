@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class Character {
     private DNDRace characterRace;
     private DNDClass characterClass;
-    HashMap<String, String> features;
+    ArrayList<String> features;
     ArrayList<String> spellList;
     ArrayList<String> inventory;
     HashMap<String, Integer> stats;

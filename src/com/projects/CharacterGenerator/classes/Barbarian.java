@@ -1,6 +1,6 @@
 package com.projects.CharacterGenerator.classes;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Barbarian implements DNDClass {
     private String[] statOrder = {"Strength", "Constitution", "Dexterity", "Charisma", "Wisdom", "Intelligence"};
@@ -41,12 +41,45 @@ public class Barbarian implements DNDClass {
     }
 
     @Override
-    public HashMap<String, String> getFeatures() {
-        return new HashMap<>();
+    public ArrayList<String> getFeatures() {
+        ArrayList<String> features = new ArrayList<>();
+        features.add("Rage");
+        features.add("Unarmored Defense");
+        return features;
     }
 
     @Override
     public String getUnarmoredDefense() {
         return "Constitution";
+    }
+
+    @Override
+    public ArrayList<String> getBalancedInventory() {
+        ArrayList<String> inventory = new ArrayList<>();
+        inventory.add("Greataxe");
+        inventory.add("Handaxe (x2)");
+        inventory.add("Javelin (x4)");
+        inventory.add("Explorer's Pack");
+        return inventory;
+    }
+
+    @Override
+    public ArrayList<String> getCombatInventory() {
+        ArrayList<String> inventory = new ArrayList<>();
+        inventory.add("Greatsword");
+        inventory.add("Handaxe (x2)");
+        inventory.add("Javelin (x4)");
+        inventory.add("Explorer's Pack");
+        return inventory;
+    }
+
+    @Override
+    public ArrayList<String> getRPInventory() {
+        ArrayList<String> inventory = new ArrayList<>();
+        inventory.add("Battleaxe");
+        inventory.add("Greatclub");
+        inventory.add("Javelin (x4)");
+        inventory.add("Explorer's Pack");
+        return inventory;
     }
 }

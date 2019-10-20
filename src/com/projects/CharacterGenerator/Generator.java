@@ -102,7 +102,7 @@ class Generator {
     private HashMap<String, Integer> computeModifiers(HashMap<String, Integer> stats){
         HashMap<String, Integer> modifiers = new HashMap<>();
         for (String key : stats.keySet()) {
-            if (stats.get(key) < 10) modifiers.put(key, (stats.get(key) - 10) / 2 - 1);
+            if (stats.get(key) < 10) modifiers.put(key, (stats.get(key) - 11) / 2);
             else modifiers.put(key, (stats.get(key) - 10) / 2);
         }
         System.out.println(modifiers);
@@ -110,7 +110,21 @@ class Generator {
     }
 
     private ArrayList<String> generateInventory(String balance){
-        return null;
+        ArrayList<String> inventory = new ArrayList<>();
+        switch(balance){
+            case "RP":
+                inventory.addAll(character.getCharacterClass().getRPInventory());
+                break;
+            case "Combat":
+                inventory.addAll(character.getCharacterClass().getCombatInventory());
+                break;
+            case "Balance":
+                inventory.addAll(character.getCharacterClass().getBalancedInventory());
+                break;
+            default:
+                break;
+        }
+        return inventory;
     }
 
     private ArrayList<String> generateSpellList(String balance){
@@ -132,12 +146,12 @@ class Generator {
         return skills;
     }
 
-    private HashMap<String, String> generateFeatures(){
-        HashMap<String, String> classFeatures = character.getCharacterClass().getFeatures();
+    private ArrayList<String> generateFeatures(){
+        ArrayList<String> classFeatures = character.getCharacterClass().getFeatures();
         //HashMap<String, String> raceFeatures = character.getCharacterRace().getFeatures();
-        HashMap<String, String> characterFeatures = new HashMap<>();
-        for (String key : classFeatures.keySet()) {
-            characterFeatures.put(key, classFeatures.get(key));
+        ArrayList<String> characterFeatures = new ArrayList<>();
+        for (String key : classFeatures) {
+            characterFeatures.add(key);
         }
         /*iter = raceFeatures.keySet().iterator();
         while(iter.hasNext()){
