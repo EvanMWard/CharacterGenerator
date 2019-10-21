@@ -1,6 +1,8 @@
 package com.projects.CharacterGenerator;
 
-import com.projects.CharacterGenerator.classes.DNDClass;
+import com.projects.CharacterGenerator.character.Character;
+import com.projects.CharacterGenerator.character.DNDRace;
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
 
 import java.util.Scanner;
 
@@ -9,9 +11,9 @@ public class Main {
     public static void main(String[] args) {
         Character character;
         DNDRace characterRace;
-        DNDClass characterClass;
+        ICharacterClass characterClass;
         characterRace = (DNDRace) getUserInput("race");
-        characterClass = (DNDClass) getUserInput("class");
+        characterClass = (ICharacterClass) getUserInput("class");
         System.out.println("You have selected " + characterRace + " " + characterClass);
         Generator generator = new Generator(characterRace, characterClass);
         character = generator.generateCharacter();
@@ -50,7 +52,7 @@ public class Main {
                 System.out.println("11. Warlock");
                 System.out.println("12. Wizard");
                 ordinal = scanner.nextInt();
-                if(ordinal > 0 && ordinal < 13) return DNDClass.byOrdinal(ordinal);
+                if(ordinal > 0 && ordinal < 13) return ICharacterClass.byOrdinal(ordinal);
             }
         }
     }

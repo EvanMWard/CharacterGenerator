@@ -1,13 +1,13 @@
-package com.projects.CharacterGenerator;
+package com.projects.CharacterGenerator.character;
 
-import com.projects.CharacterGenerator.classes.DNDClass;
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Character {
     private DNDRace characterRace;
-    private DNDClass characterClass;
+    private ICharacterClass characterClass;
     ArrayList<String> features;
     ArrayList<String> spellList;
     ArrayList<String> inventory;
@@ -21,13 +21,13 @@ public class Character {
     HashMap<String, Integer> savingThrows;
     ArrayList<String> proficiencies;
 
-    public Character(DNDRace characterRace, DNDClass characterClass){
+    public Character(DNDRace characterRace, ICharacterClass characterClass){
         this.characterRace = characterRace;
         this.characterClass = characterClass;
         proficiencyBonus = (characterClass.getLevel()+7)/4;
     }
 
-    protected DNDClass getCharacterClass(){
+    protected ICharacterClass getCharacterClass(){
         return characterClass;
     }
 

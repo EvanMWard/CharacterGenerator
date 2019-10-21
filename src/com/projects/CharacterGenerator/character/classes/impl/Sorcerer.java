@@ -1,8 +1,10 @@
-package com.projects.CharacterGenerator.classes;
+package com.projects.CharacterGenerator.character.classes.impl;
+
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
 
 import java.util.ArrayList;
 
-public class Sorcerer implements DNDClass {
+public class Sorcerer implements ICharacterClass {
 
     String[] statOrder = {"Charisma", "Constitution", "Intelligence", "Wisdom", "Dexterity", "Strength"};
     int level = 1;

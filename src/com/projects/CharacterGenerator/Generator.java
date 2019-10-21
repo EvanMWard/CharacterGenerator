@@ -1,6 +1,8 @@
 package com.projects.CharacterGenerator;
 
-import com.projects.CharacterGenerator.classes.DNDClass;
+import com.projects.CharacterGenerator.character.Character;
+import com.projects.CharacterGenerator.character.DNDRace;
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
 
 import java.util.*;
 
@@ -8,7 +10,7 @@ class Generator {
     private Character character;
     private String balance = "Balance";
 
-    Generator(DNDRace characterRace, DNDClass characterClass){
+    Generator(DNDRace characterRace, ICharacterClass characterClass){
         character = new Character(characterRace, characterClass);
     }
 

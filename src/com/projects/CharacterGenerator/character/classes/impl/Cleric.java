@@ -1,10 +1,11 @@
-package com.projects.CharacterGenerator.classes;
+package com.projects.CharacterGenerator.character.classes.impl;
+
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
-public class Cleric implements DNDClass{
+public class Cleric implements ICharacterClass {
     String[] statOrder = {"Wisdom", "Constitution", "Strength", "Intelligence", "Charisma", "Dexterity"};
     int level = 1;
     String armorType = "";

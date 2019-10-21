@@ -1,14 +1,15 @@
-package com.projects.CharacterGenerator.classes;
+package com.projects.CharacterGenerator.character.classes.impl;
+
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
 
 import java.util.ArrayList;
 
-public class Warlock implements DNDClass {
+public class Ranger implements ICharacterClass {
 
-    String[] statOrder = {"Charisma", "Constitution", "Intelligence", "Wisdom", "Dexterity", "Strength"};
+    String[] statOrder = {"Dexterity", "Wisdom", "Constitution", "Strength", "Intelligence", "Charisma"};
     int level = 1;
 
-
-    public Warlock(){
+    public Ranger(){
 
     }
 
@@ -19,7 +20,7 @@ public class Warlock implements DNDClass {
 
     @Override
     public String toString(){
-        return "Warlock";
+        return "Ranger";
     }
 
     @Override
