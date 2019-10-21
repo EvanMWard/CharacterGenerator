@@ -1,4 +1,4 @@
-package com.projects.CharacterGenerator.classes;
+package github.emward.CharacterGenerator.classes;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,6 @@
-package com.projects.CharacterGenerator.classes;
+package github.emward.CharacterGenerator.classes;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Cleric implements DNDClass{

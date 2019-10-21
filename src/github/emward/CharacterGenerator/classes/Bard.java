@@ -1,13 +1,12 @@
-package com.projects.CharacterGenerator.classes;
+package github.emward.CharacterGenerator.classes;
 
 import java.util.ArrayList;
 
-public class Wizard implements DNDClass {
-
-    String[] statOrder = {"Intelligence", "Constitution", "Dexterity", "Wisdom", "Charisma", "Strength"};
+public class Bard implements DNDClass{
+    String[] statOrder = {"Charisma", "Dexterity", "Wisdom", "Constitution", "Intelligence", "Strength"};
     int level = 1;
 
-    public Wizard(){
+    public Bard(){
 
     }
 
@@ -18,7 +17,7 @@ public class Wizard implements DNDClass {
 
     @Override
     public String toString(){
-        return "Wizard";
+        return "Bard";
     }
 
     @Override
@@ -28,7 +27,7 @@ public class Wizard implements DNDClass {
 
     @Override
     public int getBaseHitPoints() {
-        return 0;
+        return 8;
     }
 
     @Override
@@ -43,7 +42,7 @@ public class Wizard implements DNDClass {
 
     @Override
     public ArrayList<String> getFeatures() {
-        return null;
+        return new ArrayList<>();
     }
 
     @Override

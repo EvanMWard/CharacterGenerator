@@ -1,6 +1,4 @@
-package com.projects.CharacterGenerator;
-
-import java.util.HashMap;
+package github.emward.CharacterGenerator;
 
 public enum DNDRace{
     Dragonborn(1), Dwarf(2), Elf(3),

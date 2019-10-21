@@ -1,13 +1,13 @@
-package com.projects.CharacterGenerator.classes;
+package github.emward.CharacterGenerator.classes;
 
 import java.util.ArrayList;
 
-public class Ranger implements DNDClass {
+public class Druid implements DNDClass {
 
-    String[] statOrder = {"Dexterity", "Wisdom", "Constitution", "Strength", "Intelligence", "Charisma"};
+    String[] statOrder = {"Wisdom", "Constitution", "Intelligence", "Charisma", "Dexterity", "Strength"};
     int level = 1;
 
-    public Ranger(){
+    public Druid(){
 
     }
 
@@ -18,7 +18,7 @@ public class Ranger implements DNDClass {
 
     @Override
     public String toString(){
-        return "Ranger";
+        return "Druid";
     }
 
     @Override

@@ -1,6 +1,6 @@
-package com.projects.CharacterGenerator;
+package github.emward.CharacterGenerator;
 
-import com.projects.CharacterGenerator.classes.DNDClass;
+import github.emward.CharacterGenerator.classes.DNDClass;
 
 import java.util.ArrayList;
 import java.util.HashMap;
