@@ -1,6 +1,12 @@
 package github.emward.CharacterGenerator;
 
+<<<<<<< HEAD:src/github/emward/CharacterGenerator/Generator.java
 import github.emward.CharacterGenerator.classes.DNDClass;
+=======
+import com.projects.CharacterGenerator.character.Character;
+import com.projects.CharacterGenerator.character.DNDRace;
+import com.projects.CharacterGenerator.character.classes.ICharacterClass;
+>>>>>>> 71eb2fd87f863eb7a9573625e2b7e44ddfd62151:src/com/projects/CharacterGenerator/Generator.java
 
 import java.util.*;
 
@@ -8,7 +14,7 @@ class Generator {
     private Character character;
     private String balance = "Balance";
 
-    Generator(DNDRace characterRace, DNDClass characterClass){
+    Generator(DNDRace characterRace, ICharacterClass characterClass){
         character = new Character(characterRace, characterClass);
     }
 
