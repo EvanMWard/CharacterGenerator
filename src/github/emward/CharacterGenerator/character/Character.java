@@ -1,6 +1,13 @@
+<<<<<<< HEAD:src/github/emward/CharacterGenerator/Character.java
+package github.emward.CharacterGenerator;
+
+import github.emward.CharacterGenerator.classes.DNDClass;
+=======
 package com.projects.CharacterGenerator.character;
 
 import com.projects.CharacterGenerator.character.classes.ICharacterClass;
+>>>>>>> 71eb2fd87f863eb7a9573625e2b7e44ddfd62151:src/github/emward/CharacterGenerator/character/Character.java
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
